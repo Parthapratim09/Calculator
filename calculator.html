@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="calculator.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th colspan="4">Expression</th>
+                </tr>
+                <tr>
+                    <td id="expression" colspan="4">Enter:</td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <th colspan="4">Result</th>
+                </tr>
+                <tr>
+                    <td id="result" colspan="4">0</td>
+                </tr>
+            </table>
+        </div>
+        <div class="button-container">
+            <button onclick="addToInput('7')">7</button>
+            <button onclick="addToInput('8')">8</button>
+            <button onclick="addToInput('9')">9</button>
+            <button onclick="addToInput('/')">÷</button>
+            <button onclick="addToInput('4')">4</button>
+            <button onclick="addToInput('5')">5</button>
+            <button onclick="addToInput('6')">6</button>
+            <button onclick="addToInput('*')">x</button>
+            <button onclick="addToInput('1')">1</button>
+            <button onclick="addToInput('2')">2</button>
+            <button onclick="addToInput('3')">3</button>
+            <button onclick="addToInput('-')">-</button>
+            <button onclick="addToInput('0')">0</button>
+            <button onclick="addToInput('.')">.</button>
+            <button onclick="clearInput()">C</button>
+            <button onclick="addToInput('+')">+</button>
+            <button class="colorful equals-button" onclick="calculate()">=</button>
+            <button onclick="addToInput('**')">^</button> <!-- Exponent button -->
+            <button onclick="calculateSin()">sin</button>
+            <button onclick="calculateCos()">cos</button>
+            <button onclick="calculateTan()">tan</button>
+            <button onclick="calculateSqrt()">√</button>
+            <button onclick="calculateLog()">log</button>
+            <button onclick="calculateExp()">e^x</button>
+            <button onclick="calculateFactorial()">!</button>
+            <button onclick="addToInput('(')">(</button>
+            <button onclick="addToInput(')')">)</button>
+            <button onclick="addToInput('%')">%</button>
+            <button class="colorful" onclick="clearAll()">AC</button>
+        </div>
+    </div>
+
+    <Script src="calculator.js"></Script>
+</body>
+</html>
