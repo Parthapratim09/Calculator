@@ -52,9 +52,11 @@ let expression = ''; // Store the expression
 
         function calculateSin() {
             try {
-                const result = Math.sin(eval(expression));
+                const degrees = eval(expression);
+                const radians = degrees * (Math.PI / 180); // Convert to radians
+                const result = Math.sin(radians);
                 document.getElementById("result").innerHTML = result.toFixed(4);
-                expression = result.toString(); // Store the result as the next part of the expression
+                expression = result.toString();
                 document.getElementById("expression").innerHTML = '';
                 resultShown = true;
             } catch (error) {
@@ -63,12 +65,14 @@ let expression = ''; // Store the expression
                 expression = '';
             }
         }
-
+        
         function calculateCos() {
             try {
-                const result = Math.cos(eval(expression));
+                const degrees = eval(expression);
+                const radians = degrees * (Math.PI / 180);
+                const result = Math.cos(radians);
                 document.getElementById("result").innerHTML = result.toFixed(4);
-                expression = result.toString(); // Store the result as the next part of the expression
+                expression = result.toString();
                 document.getElementById("expression").innerHTML = '';
                 resultShown = true;
             } catch (error) {
@@ -77,12 +81,14 @@ let expression = ''; // Store the expression
                 expression = '';
             }
         }
-
+        
         function calculateTan() {
             try {
-                const result = Math.tan(eval(expression));
+                const degrees = eval(expression);
+                const radians = degrees * (Math.PI / 180);
+                const result = Math.tan(radians);
                 document.getElementById("result").innerHTML = result.toFixed(4);
-                expression = result.toString(); // Store the result as the next part of the expression
+                expression = result.toString();
                 document.getElementById("expression").innerHTML = '';
                 resultShown = true;
             } catch (error) {
@@ -91,7 +97,7 @@ let expression = ''; // Store the expression
                 expression = '';
             }
         }
-
+        
         function calculateSqrt() {
             try {
                 const result = Math.sqrt(eval(expression));
