@@ -22,11 +22,24 @@ let expression = ''; // Store the expression
 
         function calculate() {
             try {
-                const result = eval(expression);
+                let modifiedExpression = expression;
+
+                // Handling percentage calculations
+                modifiedExpression = modifiedExpression.replace(/(\d+)%(\d+)/g, "($1/100)*$2"); // 50%200 → (50/100)*200
+                modifiedExpression = modifiedExpression.replace(/(\d+)%/g, "($1/100)"); // 50% → (50/100)
+        
+                const result = eval(modifiedExpression);
                 document.getElementById("result").innerHTML = result.toFixed(4);
-                expression = result.toString(); // Store the result as the next part of the expression
-                // document.getElementById("expression").innerHTML = '';
+                expression = result.toString(); 
                 resultShown = true;
+
+
+                
+                // const result = eval(expression);
+                // document.getElementById("result").innerHTML = result.toFixed(4);
+                // expression = result.toString(); // Store the result as the next part of the expression
+                // // document.getElementById("expression").innerHTML = '';
+                // resultShown = true;
             } catch (error) {
                 document.getElementById("result").innerHTML = "Error";
                 document.getElementById("expression").innerHTML = "Invalid Expression";
@@ -137,6 +150,13 @@ let expression = ''; // Store the expression
                 document.getElementById("result").innerHTML = "Error";
                 document.getElementById("expression").innerHTML = "Invalid Expression";
                 expression = '';
+            }
+        }
+        
+        function addPercentage() {
+            if (expression !== '' && !expression.endsWith('%')) {
+                expression += '%';
+                document.getElementById("expression").innerHTML = expression;
             }
         }
 
